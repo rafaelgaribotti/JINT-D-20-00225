@@ -1,5 +1,7 @@
-JINT-D-20-00225 [![License][license-img]][license-url]
-= Source code and data raw used in the article entitled: "An Embedded Quaternion-Based Extended Kalman Filter Pose Estimation for Six Degrees of Freedom Systems" submitted to the Journal of Intelligent & Robotic Systems.
+JINT-D-20-00225 
+================
+
+Source code and data raw used in the article entitled: "An Embedded Quaternion-Based Extended Kalman Filter Pose Estimation for Six Degrees of Freedom Systems" submitted to the Journal of Intelligent & Robotic Systems.
 
 Author
 ------

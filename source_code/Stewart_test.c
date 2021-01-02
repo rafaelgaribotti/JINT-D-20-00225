@@ -355,29 +355,29 @@
                 // }
 
                 while(1){
-                        // flag_protocol = protocolUpdate(UartGetc());
+                        flag_protocol = protocolUpdate(UartGetc());
                         
-                        // if(flag_protocol == true){
-                        //     if(protocolCheckCRC() == true){
-                        //         // Acquire variables:
-                        //         command = protocolGetCommand();
-                        //         data_size = protocolGetDataSize();
-                        //         protocolGetData(data_in, data_size);
-                        //         // Execution:
-                        //         stateMachine(command, data_in, data_size);
-                        //     }else{
-                        //         sprintf(buffu, "Protocol CRC ERROR.\n");
-                        //         GLCD_DrawString(START_COL, line++ * FONTS_H, buffu);
-                        //         flag_logErr = 1;
-                        //     }
-                        //     protocolReset();
-                        //     flag_protocol = 0;
-                        // }
+                        if(flag_protocol == true){
+                             if(protocolCheckCRC() == true){
+                                 // Acquire variables:
+                                 command = protocolGetCommand();
+                                 data_size = protocolGetDataSize();
+                                 protocolGetData(data_in, data_size);
+                                 // Execution:
+                                 stateMachine(command, data_in, data_size);
+                             }else{
+                                 sprintf(buffu, "Protocol CRC ERROR.\n");
+                                 GLCD_DrawString(START_COL, line++ * FONTS_H, buffu);
+                                 flag_logErr = 1;
+                             }
+                             protocolReset();
+                             flag_protocol = 0;
+                         }
                         
-                        // for (k = 0; k < 54; k++){ 
-                        //     data_in[k] = UartGetc();
-                        //     if (k == 53) flag_dataProc = 1;
-                        // }
+                         for (k = 0; k < 54; k++){ 
+                             data_in[k] = UartGetc();
+                             if (k == 53) flag_dataProc = 1;
+                         }
 
                         if(flag_dataProc == 1){
                             // Entradas do gyr:
@@ -433,7 +433,7 @@
                             flag_dataProc = 0;
                         }
                         
-                        // if(flag_filter == 1){
+                        if(flag_filter == 1){
                             printf("\ni = %d.", i);
                             g_m.data[0][0] = my_Gyro[i][0];
                             g_m.data[1][0] = my_Gyro[i][1];
@@ -467,7 +467,7 @@
                             
                         //     flag_log = 1;
                         //     flag_filter = 0;
-                        // }
+                        }
                         
                         if(flag_log == 1){
                             // sprintf("%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f ", xf.data[0][0],\
